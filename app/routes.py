@@ -13,10 +13,22 @@ class User(db.Model):
 
 @app.route('/')
 def home():
+    """
+    Render the home page.
+
+    :return: The rendered home page template
+    :rtype: str
+    """
     return render_template('index.html')
 
 @app.route('/submit', methods=['POST'])
 def submit():
+    """
+    Handle form submission, create a new user, and redirect to the home page.
+
+    :return: A redirect response to the home page
+    :rtype: werkzeug.wrappers.Response
+    """
     name = request.form['name']
     email = request.form['email']
     create_user(name, email)
