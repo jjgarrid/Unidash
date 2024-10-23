@@ -9,6 +9,28 @@
 <body>
     <div class="container">
         <h1>Unidash</h1>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Page 1</a>
+                    <ul>
+                        <li><a href="#">Sub Page 1.1</a></li>
+                        <li><a href="#">Sub Page 1.2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Page 2</a>
+                    <ul>
+                        <li><a href="#">Sub Page 2.1</a></li>
+                        <li><a href="#">Sub Page 2.2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Page 3</a>
+                    <ul>
+                        <li><a href="#">Sub Page 3.1</a></li>
+                        <li><a href="#">Sub Page 3.2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <form action="{{ url_for('submit') }}" method="POST">
             <div class="form-group">
                 <label for="name">Name:</label>
