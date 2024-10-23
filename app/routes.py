@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from app.backend import create_user
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
@@ -18,9 +19,7 @@ def home():
 def submit():
     name = request.form['name']
     email = request.form['email']
-    user = User(name=name, email=email)
-    db.session.add(user)
-    db.session.commit()
+    create_user(name, email)
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
