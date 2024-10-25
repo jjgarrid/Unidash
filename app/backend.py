@@ -1,9 +1,13 @@
-import logging
 from app.routes import db, User
 
-# Configurar el registro
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+def log_message(message):
+    """
+    Imprimir un mensaje de registro.
+
+    :param message: El mensaje a imprimir
+    :type message: str
+    """
+    print(f"LOG: {message}")
 
 def create_user(name, email):
     """
@@ -17,4 +21,4 @@ def create_user(name, email):
     user = User(name=name, email=email)
     db.session.add(user)
     db.session.commit()
-    logger.info(f"Usuario creado: {name}, {email}")
+    log_message(f"Usuario creado: {name}, {email}")
