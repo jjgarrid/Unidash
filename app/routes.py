@@ -30,5 +30,35 @@ def submit():
     create_user(name, email)
     return redirect(url_for('home'))
 
+@app.route('/pared2d')
+def pared2d():
+    """
+    Renderizar la página de Pared 2D.
+
+    :return: La plantilla de la página de Pared 2D renderizada
+    :rtype: str
+    """
+    return render_template('pared2d.html')
+
+@app.route('/pared3d')
+def pared3d():
+    """
+    Renderizar la página de Pared 3D.
+
+    :return: La plantilla de la página de Pared 3D renderizada
+    :rtype: str
+    """
+    return render_template('pared3d.html')
+
+@app.route('/barovel')
+def barovel():
+    """
+    Renderizar la página de Barovel.
+
+    :return: La plantilla de la página de Barovel renderizada
+    :rtype: str
+    """
+    return render_template('barovel.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
