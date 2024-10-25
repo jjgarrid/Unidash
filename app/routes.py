@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from app.models import db, User
-from app.backend import create_user
+from app.backend import create_user, generate_files
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
@@ -59,6 +59,20 @@ def barovel():
     :rtype: str
     """
     return render_template('barovel.html')
+
+@app.route('/generate_files', methods=['POST'])
+def generate_files_route():
+    """
+    Manejar la generación de archivos y la ejecución de comandos.
+
+    :return: Una respuesta de redirección a la página de inicio
+    :rtype: werkzeug.wrappers.Response
+    """
+    template_folder = request.form['template_folder']
+    output_folder = request.form['output_folder']
+    params = request.form.to_dict()
+    generate_files(template_folder, output_folder, params)
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)

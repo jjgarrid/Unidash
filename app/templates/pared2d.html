@@ -9,6 +9,19 @@
 <body>
     <div class="container">
         <h1>Pared 2D</h1>
+        <form action="/generate_files" method="post">
+            <div class="form-group">
+                <label for="param1">Parámetro 1:</label>
+                <input type="text" id="param1" name="param1" required>
+            </div>
+            <div class="form-group">
+                <label for="param2">Parámetro 2:</label>
+                <input type="text" id="param2" name="param2" required>
+            </div>
+            <input type="hidden" name="template_folder" value="app/templates/pared2d">
+            <input type="hidden" name="output_folder" value="app/output/pared2d">
+            <button type="submit">Generar Archivos</button>
+        </form>
         <a href="{{ url_for('home') }}">Volver a la página principal</a>
     </div>
 </body>
