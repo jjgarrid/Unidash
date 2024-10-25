@@ -1,4 +1,4 @@
-from app.routes import db, User
+from app.models import db, User
 
 def log_message(message):
     """
