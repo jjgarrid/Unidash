@@ -12,22 +12,11 @@
         <h2>Interfaz simple para FEHM</h2>
         <div class="menu">
             <ul>
-                <li><a href="#">Página 1</a>
+                <li><a href="#">Escenarios</a>
                     <ul>
-                        <li><a href="#">Sub Página 1.1</a></li>
-                        <li><a href="#">Sub Página 1.2</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Página 2</a>
-                    <ul>
-                        <li><a href="#">Sub Página 2.1</a></li>
-                        <li><a href="#">Sub Página 2.2</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Página 3</a>
-                    <ul>
-                        <li><a href="#">Sub Página 3.1</a></li>
-                        <li><a href="#">Sub Página 3.2</a></li>
+                        <li><a href="{{ url_for('pared2d') }}">Transferencia de calor - Pared 2D</a></li>
+                        <li><a href="{{ url_for('pared3d') }}">Transferencia de calor - Pared 3D</a></li>
+                        <li><a href="{{ url_for('barovel') }}">Variación barométrica - Barovel</a></li>
                     </ul>
                 </li>
             </ul>
