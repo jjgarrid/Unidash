@@ -14,9 +14,9 @@ class User(db.Model):
 @app.route('/')
 def home():
     """
-    Render the home page.
+    Renderizar la página de inicio.
 
-    :return: The rendered home page template
+    :return: La plantilla de la página de inicio renderizada
     :rtype: str
     """
     return render_template('index.html')
@@ -24,9 +24,9 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     """
-    Handle form submission, create a new user, and redirect to the home page.
+    Manejar el envío del formulario, crear un nuevo usuario y redirigir a la página de inicio.
 
-    :return: A redirect response to the home page
+    :return: Una respuesta de redirección a la página de inicio
     :rtype: werkzeug.wrappers.Response
     """
     name = request.form['name']

@@ -1,11 +1,11 @@
-# Configuration file for the Sphinx documentation builder.
+# Archivo de configuración para el generador de documentación Sphinx.
 
-# -- Project information -----------------------------------------------------
+# -- Información del proyecto -----------------------------------------------------
 
 project = 'Unidash'
-author = 'Author Name'
+author = 'Nombre del Autor'
 
-# -- General configuration ---------------------------------------------------
+# -- Configuración general ---------------------------------------------------
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -15,7 +15,7 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-# -- Options for HTML output -------------------------------------------------
+# -- Opciones para la salida HTML -------------------------------------------------
 
 html_theme = 'alabaster'
 html_static_path = ['_static']

@@ -1,8 +1,8 @@
-Unidash Documentation
-=====================
+Documentación de Unidash
+========================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contenidos:
 
-   modules
+   módulos

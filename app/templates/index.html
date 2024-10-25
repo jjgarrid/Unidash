@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,36 +11,36 @@
         <h1>Unidash</h1>
         <div class="menu">
             <ul>
-                <li><a href="#">Page 1</a>
+                <li><a href="#">Página 1</a>
                     <ul>
-                        <li><a href="#">Sub Page 1.1</a></li>
-                        <li><a href="#">Sub Page 1.2</a></li>
+                        <li><a href="#">Sub Página 1.1</a></li>
+                        <li><a href="#">Sub Página 1.2</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Page 2</a>
+                <li><a href="#">Página 2</a>
                     <ul>
-                        <li><a href="#">Sub Page 2.1</a></li>
-                        <li><a href="#">Sub Page 2.2</a></li>
+                        <li><a href="#">Sub Página 2.1</a></li>
+                        <li><a href="#">Sub Página 2.2</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Page 3</a>
+                <li><a href="#">Página 3</a>
                     <ul>
-                        <li><a href="#">Sub Page 3.1</a></li>
-                        <li><a href="#">Sub Page 3.2</a></li>
+                        <li><a href="#">Sub Página 3.1</a></li>
+                        <li><a href="#">Sub Página 3.2</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <form action="{{ url_for('submit') }}" method="POST">
             <div class="form-group">
-                <label for="name">Name:</label>
+                <label for="name">Nombre:</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Enviar</button>
         </form>
     </div>
 </body>
