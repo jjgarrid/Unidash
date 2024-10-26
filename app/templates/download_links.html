@@ -11,7 +11,7 @@
         <h1>Download Links</h1>
         <ul>
             {% for file_path in file_paths %}
-                <li><a href="{{ url_for('download_file', filename=file_path) }}">{{ file_path }}</a></li>
+                <li><a href="{{ url_for('download_file', filename=file_path.replace('app/', '')) }}">{{ file_path.replace('app/', '') }}</a></li>
             {% endfor %}
         </ul>
         <a href="{{ url_for('home') }}">Volver a la página principal</a>

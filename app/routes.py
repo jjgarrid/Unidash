@@ -74,6 +74,9 @@ def generate_files_route():
     params = request.form.to_dict()
     generated_file_paths = generate_files(template_folder, output_folder, params)
     
+    # Remove the 'app/' prefix from the generated file paths
+    generated_file_paths = [path.replace('app/', '') for path in generated_file_paths]
+    
     return render_template('download_links.html', file_paths=generated_file_paths)
 
 @app.route('/download/<path:filename>')
