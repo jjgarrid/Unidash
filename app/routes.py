@@ -74,10 +74,21 @@ def generate_files_route():
     params = request.form.to_dict()
     generated_file_paths = generate_files(template_folder, output_folder, params)
     
-    for generated_file_path in generated_file_paths:
-        if os.path.exists(generated_file_path):
-            return send_file(generated_file_path, as_attachment=True)
-    
+    return render_template('download_links.html', file_paths=generated_file_paths)
+
+@app.route('/download/<path:filename>')
+def download_file(filename):
+    """
+    Manejar la descarga de archivos generados.
+
+    :param filename: El nombre del archivo a descargar
+    :type filename: str
+    :return: El archivo a descargar
+    :rtype: werkzeug.wrappers.Response
+    """
+    file_path = os.path.join('app/output', filename)
+    if os.path.exists(file_path):
+        return send_file(file_path, as_attachment=True)
     abort(404, description="File not found")
 
 if __name__ == '__main__':
