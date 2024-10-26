@@ -1,0 +1,46 @@
+***** Pared Heat Conduction Model *****
+# To be consistent with earlier versions
+nfinv
+node
+  3
+  1 13 21
+cont
+avs 150 10.
+geom
+temperature
+formatted
+zid
+end
+sol
+  -1    -1
+init
+  0.10    20.    20.   0.   0.   20.   0.   0.
+zone
+  1
+  0.       1.       1.       0.
+  0.       0.       1.       1.
+
+rock  JA(o zona), JB (o zona), JC, Densidad de roca, Calor especifico, Porosidad
+   -1    0    0    1680.     {{ Calor_especifico }}     {{ Porosidad }}
+
+cond  JA(o zona), JB (o zona), JC, Conductividad térmica X, Y, Z en W/(m*K)
+   -1    0    0    {{ conductividad_termica }}   {{ conductividad_termica }}   {{ conductividad_termica }}
+
+perm  JA(o zona), JB (o zona), JC, Permeabilidad en X, Y, Z en m2
+   -1    0    0    {{ Permeabilidad }}    {{ Permeabilidad }}    {{ Permeabilidad }}  0.  0.  0.
+
+flow JA, JB, JC, Heat MJ/s, Temp (ºC), AIPED
+    1   5 1 {{ flujo_calor }}  1.00  1.e03    
+
+time
+  0.0025   6.00   1000   10   1989   04
+  .25 .005 1. 10
+
+ctrl
+  40   1.e-04   08
+  -1    0    0    1
+
+  1.0   0.0   1.0
+  10   1.0   0.00005 0.005
+  1   0
+stop
