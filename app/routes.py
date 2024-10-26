@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from app.models import db, User
 from app.backend import create_user, generate_files
 import os
+import subprocess
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
@@ -93,6 +94,18 @@ def download_file(filename):
     if os.path.exists(file_path):
         return send_file(file_path, as_attachment=True)
     abort(404, description="File not found")
+
+@app.route('/run_command', methods=['POST'])
+def run_command():
+    """
+    Manejar la ejecución de un comando del sistema.
+
+    :return: Una respuesta de redirección a la página de enlaces de descarga
+    :rtype: werkzeug.wrappers.Response
+    """
+    command = ["echo", "Comando ejecutado con éxito"]
+    subprocess.run(command)
+    return redirect(url_for('download_links'))
 
 if __name__ == '__main__':
     app.run(debug=True)
