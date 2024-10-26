@@ -105,7 +105,7 @@ def run_command():
     """
     command = ["echo", "Comando ejecutado con éxito"]
     subprocess.run(command)
-    return redirect(url_for('download_links'))
+    return redirect(url_for('download_file'))
 
 if __name__ == '__main__':
     app.run(debug=True)
