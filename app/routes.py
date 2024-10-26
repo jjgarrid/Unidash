@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_file
 from flask_sqlalchemy import SQLAlchemy
 from app.models import db, User
 from app.backend import create_user, generate_files
@@ -71,8 +71,8 @@ def generate_files_route():
     template_folder = request.form['template_folder']
     output_folder = request.form['output_folder']
     params = request.form.to_dict()
-    generate_files(template_folder, output_folder, params)
-    return redirect(url_for('home'))
+    generated_file_path = generate_files(template_folder, output_folder, params)
+    return send_file(generated_file_path, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)

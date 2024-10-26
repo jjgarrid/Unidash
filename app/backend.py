@@ -40,6 +40,10 @@ def generate_files(template_folder, output_folder, params):
     # Crear el entorno de Jinja2
     env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_folder))
 
+    # Crear el directorio de salida si no existe
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
     # Iterar sobre las plantillas en la carpeta de plantillas
     for template_name in os.listdir(template_folder):
         template = env.get_template(template_name)
@@ -53,3 +57,5 @@ def generate_files(template_folder, output_folder, params):
     # Ejecutar un comando de línea de comandos
     command = ["echo", "Archivos generados con éxito"]
     subprocess.run(command)
+
+    return output_path
