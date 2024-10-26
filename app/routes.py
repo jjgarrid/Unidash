@@ -100,12 +100,12 @@ def run_command():
     """
     Manejar la ejecución de un comando del sistema.
 
-    :return: Una respuesta de redirección a la página de enlaces de descarga
+    :return: Una respuesta de redirección a la página de inicio
     :rtype: werkzeug.wrappers.Response
     """
     command = ["echo", "Comando ejecutado con éxito"]
     subprocess.run(command)
-    return redirect(url_for('download_file'))
+    return redirect(url_for('home'))
 
 if __name__ == '__main__':
     app.run(debug=True)
