@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, send_file
+from flask import Flask, render_template, request, redirect, url_for, send_file, abort
 from flask_sqlalchemy import SQLAlchemy
 from app.models import db, User
 from app.backend import create_user, generate_files
+import os
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
@@ -71,8 +72,13 @@ def generate_files_route():
     template_folder = request.form['template_folder']
     output_folder = request.form['output_folder']
     params = request.form.to_dict()
-    generated_file_path = generate_files(template_folder, output_folder, params)
-    return send_file(generated_file_path, as_attachment=True)
+    generated_file_paths = generate_files(template_folder, output_folder, params)
+    
+    for generated_file_path in generated_file_paths:
+        if os.path.exists(generated_file_path):
+            return send_file(generated_file_path, as_attachment=True)
+    
+    abort(404, description="File not found")
 
 if __name__ == '__main__':
     app.run(debug=True)

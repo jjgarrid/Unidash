@@ -44,6 +44,8 @@ def generate_files(template_folder, output_folder, params):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
+    generated_file_paths = []
+
     # Iterar sobre las plantillas en la carpeta de plantillas
     for template_name in os.listdir(template_folder):
         template = env.get_template(template_name)
@@ -53,9 +55,11 @@ def generate_files(template_folder, output_folder, params):
         output_path = os.path.join(output_folder, template_name)
         with open(output_path, 'w') as output_file:
             output_file.write(output_content)
+        
+        generated_file_paths.append(output_path)
 
     # Ejecutar un comando de línea de comandos
     command = ["echo", "Archivos generados con éxito"]
     subprocess.run(command)
 
-    return output_path
+    return generated_file_paths
