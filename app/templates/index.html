@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unidash</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        /* Inline style for the warning box */
+        .warning {
+            background-color: #ffcccc; /* Light red background */
+            color: #990000; /* Dark red text */
+            border: 2px solid #990000; /* Dark red border */
+            padding: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Unidash</h1>
         <h2>Interfaz simple para FEHM</h2>
+
+        <!-- Warning Box -->
+        <div class="warning">
+            Es importante verificar que FEHM se encuentre en el mismo nivel que Unidash y que los escenarios se hayan descomprimido en FEHM/fehmpytests/escenarios
+        </div>
+
         <div class="menu">
             <ul>
                 <li><a href="#">Escenarios</a>
