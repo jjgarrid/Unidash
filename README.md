@@ -22,12 +22,8 @@ Usando Python sin Conda hay que instalar manualmente algunas dependencias.
 - sphinx
 
 ## Instalación
-1. Extrae el archivo zip o clona el repositorio:
-   ```bash
-   git clone https://github.com/jjgarrid/Unidash.git
-   cd Unidash
-   ```
-   Lo importante es la localización de la carpeta `Unidash` en tu sistema. De la ruta depende la ejecución de los scripts de FEHM.
+1. Extrae el archivo zip.Lo importante es la localización de la carpeta `Unidash` en tu sistema. De la ruta depende la ejecución de los scripts de FEHM.
+
    ```plaintext
    root
    ├── Unidash
@@ -38,6 +34,12 @@ Usando Python sin Conda hay que instalar manualmente algunas dependencias.
    ```bash
    conda create --name unidash_env python=3.8 -y
    ```
+
+3. Dar permisos de ejecución a los archivos de la carpeta `scripts`:
+   ```bash
+   chmod +x scripts/*
+   ```
+
 
 ## Ejecución de la Aplicación
 1. Asegúrate de que el entorno conda esté activado:
