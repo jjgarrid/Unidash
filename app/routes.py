@@ -103,7 +103,7 @@ def run_command():
     :return: Una respuesta de redirección a la página de inicio
     :rtype: werkzeug.wrappers.Response
     """
-    command = ["echo", "Comando ejecutado con éxito"]
+    command = ["scripts/run_fehm.sh"]
     subprocess.run(command)
     return redirect(url_for('home'))
 
