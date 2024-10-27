@@ -70,6 +70,8 @@ def generate_files_route():
     :return: Una respuesta de redirección a la página de inicio
     :rtype: werkzeug.wrappers.Response
     """
+    if 'template_folder' not in request.form:
+        abort(400, description="Missing 'template_folder' in request form")
     template_folder = request.form['template_folder']
     output_folder = request.form['output_folder']
     params = request.form.to_dict()
