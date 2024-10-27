@@ -1,5 +1,7 @@
 #!/bin/bash
 
-# Hardcoded command to be executed by the "Run FEHM" button
-echo "Running FEHM..."
-# Add the actual command to run FEHM here
+
+# Comando codificado para ser ejecutado por el botón "Run FEHM"
+echo "Ejecutando FEHM..."
+# Agrega el comando real para ejecutar FEHM aquí
+
