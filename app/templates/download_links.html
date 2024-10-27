@@ -14,7 +14,7 @@
                 <li><a href="{{ url_for('download_file', filename=file_path.replace('app/', '')) }}">{{ file_path.replace('app/', '') }}</a></li>
             {% endfor %}
         </ul>
-        <form action="/run_command" method="POST">
+        <form action="{{ url_for('run_command') }}" method="POST">
             <button type="submit">Run FEHM</button>
         </form>
         <a href="{{ url_for('home') }}">Volver a la página principal</a>
