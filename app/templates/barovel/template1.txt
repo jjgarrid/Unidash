@@ -1,9 +1,0 @@
-# Template for Barovel Page
-
-# Placeholder content for the template
-# Replace this content with actual template data
-
-Title: {{ title }}
-Description: {{ description }}
-Parameter 1: {{ param1 }}
-Parameter 2: {{ param2 }}
