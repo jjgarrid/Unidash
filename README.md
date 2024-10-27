@@ -28,6 +28,11 @@ Usando Python sin Conda hay que instalar manualmente algunas dependencias.
    cd Unidash
    ```
    Lo importante es la localización de la carpeta `Unidash` en tu sistema. De la ruta depende la ejecución de los scripts de FEHM.
+   ```plaintext
+   root
+   ├── Unidash
+   └── FEHM
+   ```
 
 2. Crea y activa el entorno conda:
    ```bash
