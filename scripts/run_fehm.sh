@@ -21,6 +21,6 @@ fi
 # Move files from app/output/barovel to ../FEHM_mast/fehmpytests/escenarios/isotermal/baro_vel_V2/input
 if [ -d "app/output/barovel" ]; then
     mv app/output/barovel/* ../FEHM_mast/fehmpytests/escenarios/isotermal/baro_vel_V2/input/
-    echo "Archivos movidos de app/output/barovel a ../FEHM_mast/fehmpytests/escenarios/isotermal/baro_vel_V2/input"
+    echo "Archivos movidos de app/output/barovel a ../FEHM/fehmpytests/escenarios/isotermal/baro_vel_V2/input"
     echo $PWD
 fi

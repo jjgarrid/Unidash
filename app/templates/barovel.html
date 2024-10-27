@@ -10,6 +10,8 @@
     <div class="container">
         <h1>Barovel</h1>
         <form action="/generate_files" method="post">
+            <input type="hidden" name="template_folder" value="app/templates/barovel">
+            <input type="hidden" name="output_folder" value="app/output/barovel">
             <input type="hidden" name="template_folder" value="barovel">
             <button type="submit">Generar Archivos</button>
         </form>
